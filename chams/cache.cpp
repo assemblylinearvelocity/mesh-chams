@@ -170,7 +170,6 @@ namespace
 		bool expected = false;
 		if (!g_running.compare_exchange_strong(expected, true)) return;
 
-		MeshHttp::EnsureAuthLoaded();
 		{
 			std::lock_guard<std::mutex> lk(g_lock);
 			g_failed.clear();
